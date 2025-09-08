@@ -4,38 +4,38 @@ package ar.edu.unq.po2.tp4.test.supermercado;
 
 public class Producto {
 	
-	private float precio;
+	protected double precio;
 	private String nombre;
-	private Boolean esPrecioCuidado = false;
+	protected boolean esPrecioCuidado = false;
 	
 	
+	public Producto(String nombre, double precio, boolean esPrecioCuidado) {
+		this.nombre = nombre;
+		this.precio = precio;
+		this.esPrecioCuidado = esPrecioCuidado;
+	}
+
+
 	public Producto(String nombre, double precio) {
-		// TODO Auto-generated constructor stub
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public double getPrecio() {
+		return precio;
 	}
 
 
-	public Producto(String string, double precio, boolean esPrecioCuidado) {
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Object getNombre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Double getPrecio() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public Boolean esPrecioCuidado() {
+	public boolean esPrecioCuidado() {
 		return esPrecioCuidado;
 	}
 	
 	
-	public void aumentarPrecio(double porcentaje) {
-		
+	public void aumentarPrecio(double aumento) {
+		this.precio = this.precio + aumento;
 	}
 }

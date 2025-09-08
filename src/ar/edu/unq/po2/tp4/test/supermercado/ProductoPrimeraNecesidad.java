@@ -4,7 +4,10 @@ public class ProductoPrimeraNecesidad extends Producto{
 
 
 	public ProductoPrimeraNecesidad(String nombre, double precio, boolean esPrecioCuidado) {
-		super(nombre, precio,true);	
+		super(nombre, precio,esPrecioCuidado);	
 	}
-
+	
+	public double getPrecio() {
+		return this.precio * 0.9;
+	}
 }

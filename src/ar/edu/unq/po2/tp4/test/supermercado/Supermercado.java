@@ -1,24 +1,31 @@
 package ar.edu.unq.po2.tp4.test.supermercado;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Supermercado {
-
-	public Supermercado(String string, String string2) {
-		// TODO Auto-generated constructor stub
+	
+	private String nombreSuper;
+	private String direccion;
+	private List<Producto> productos = new ArrayList<Producto>();
+	
+	public Supermercado(String nombreSuper, String direccion) {
+		this.nombreSuper = nombreSuper;
+		this.direccion = direccion;
 	}
 
-	public void agregarProducto(Producto arroz) {
-		// TODO Auto-generated method stub
-		
+	public void agregarProducto(Producto product) {
+		productos.add(product);
 	}
 
-	public Integer getCantidadDeProductos() {
-		// TODO Auto-generated method stub
-		return null;
+	public int getCantidadDeProductos() {
+		return productos.size();
 	}
 
-	public Double getPrecioTotal() {
-		// TODO Auto-generated method stub
-		return null;
+	public double getPrecioTotal() {
+		return productos.stream().
+				mapToDouble(producto -> producto.getPrecio()).
+				sum();
 	}
 
 }
