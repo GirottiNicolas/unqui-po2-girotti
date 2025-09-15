@@ -3,10 +3,11 @@ package tp5.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tp5.Caja;
-import tp5.Cliente;
-import tp5.ProductoCooperativa;
-import tp5.ProductoTradicional;
+
+import tp5.caja.Caja;
+import tp5.caja.Cliente;
+import tp5.caja.ProductoCooperativa;
+import tp5.caja.ProductoTradicional;
 
 
 

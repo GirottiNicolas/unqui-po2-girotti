@@ -1,4 +1,4 @@
-package tp5;
+package tp5.caja;
 
 import java.util.ArrayList;
 import java.util.List;

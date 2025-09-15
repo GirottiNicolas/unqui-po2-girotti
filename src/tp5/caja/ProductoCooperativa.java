@@ -1,4 +1,4 @@
-package tp5;
+package tp5.caja;
 
 public class ProductoCooperativa extends ProductoTradicional{
 	

@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import tp5.Caja;
-import tp5.Cliente;
-import tp5.ProductoTradicional;
+import tp5.caja.Caja;
+import tp5.caja.Cliente;
+import tp5.caja.ProductoTradicional;
 import tp5.facturas.AgenciaRecaudadora;
 import tp5.facturas.Impuesto;
 import tp5.facturas.Servicio;
@@ -41,6 +41,25 @@ public class ServiciosEImpuestosTest {
 	@Test
 	public void pagarServicios() {
 		cajaSuper.cobrar(nicolas);
-		assertEquals(999, queso.getStock());
+		assertEquals(15000, facturaDeLuz.montoAPagar());
 	}
+	
+	@Test
+	public void pagarImpuesto() {
+		cajaSuper.cobrar(nicolas);
+		assertEquals(5000, abl.montoAPagar());
+	}
+	
+	@Test
+	public void pagoTotalDeCaja() {
+		cajaSuper.cobrar(nicolas);
+		assertEquals(20010, cajaSuper.getMontoAPagar());
+	}
+	
+	@Test
+	public void cantidadDeConsumiblesDelCliente() {
+		assertEquals(3, nicolas.getConsumibles().size());
+	}
+	
+	
 }

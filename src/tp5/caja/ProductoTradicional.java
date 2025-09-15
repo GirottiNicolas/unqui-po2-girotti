@@ -1,4 +1,4 @@
-package tp5;
+package tp5.caja;
 
 import tp5.interfaces.Consumible;
 
