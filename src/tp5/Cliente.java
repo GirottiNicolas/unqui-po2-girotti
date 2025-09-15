@@ -3,17 +3,19 @@ package tp5;
 import java.util.ArrayList;
 import java.util.List;
 
+import tp5.interfaces.Consumible;
+
 
 
 public class Cliente {
 	
-	private List<ProductoTradicional> productos = new ArrayList<ProductoTradicional>();
+	private List<Consumible > consumibles = new ArrayList<Consumible>();
 	
-	public List<ProductoTradicional> getProductos(){
-		return productos;
+	public List<Consumible> getConsumibles(){
+		return consumibles;
 	}
 	
-	public void agregarProducto(ProductoTradicional producto) {
-		productos.add(producto);
+	public void agregarConsumible(Consumible producto) {
+		consumibles.add(producto);
 	}
 }

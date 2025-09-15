@@ -1,7 +1,6 @@
 package tp5;
 
-
-
+import tp5.interfaces.Consumible;
 
 public class Caja {
 	
@@ -12,13 +11,15 @@ public class Caja {
 		return monto;
 	}
 	
-	public void registrar(ProductoTradicional producto) {
-		this.sumarAlTotal(producto.getPrecio());
-		producto.decrementarStock();
+	public void registrar(Consumible consumible) {
+		consumible.registrar();
+		this.sumarAlTotal(consumible.montoAPagar());
+		System.out.println("Monto a pagar por el cliente $" + this.getMontoAPagar());
+		
 	}
 	
 	public void cobrar(Cliente cliente) {
-		cliente.getProductos().stream().
+		cliente.getConsumibles().stream().
 								forEach(producto -> this.registrar(producto));
 								
 	}
